@@ -1,30 +1,19 @@
 base_url = "https://oselotl.com"
 title = "oselotl"
-description = "Your site description"
+description = "Welcome to my blog"
 theme = "duckquill"
 
-# Required settings
+# Basic settings
 compile_sass = true
 build_search_index = true
-generate_feed = true
 
-# Search settings that were missing
+# Minimal search settings
 [search]
-index_format = "elasticlunr_javascript"
-include_content = true
-include_description = true
+index_format = "elasticlunr"
 
+# Required markdown settings
 [markdown]
 highlight_code = true
-highlight_theme = "dracula"
 
-# Theme settings
 [extra]
-author = "Your Name"
-favicon = "/icon.png"
-icon = "/icon.png"
-theme_color = "#ffffff"
-filter_nav = false
-
-# Date format
-default_language = "en"
+author = "oselotl"
