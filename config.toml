@@ -1,3 +1,15 @@
 base_url = "https://oselotl.com"
-title = "Oselotl"
+title = "oselotl"
+description = "Your site description"
 theme = "duckquill"
+
+# Required settings for duckquill
+compile_sass = true
+build_search_index = true
+generate_feed = true
+
+[markdown]
+highlight_code = true
+
+[extra]
+author = "Your Name"
