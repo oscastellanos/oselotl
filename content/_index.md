@@ -1,5 +1,5 @@
 +++
 title = "Home"
-template = "index.html"
-page_template = "page.html"
 +++
+
+Welcome to my blog!
