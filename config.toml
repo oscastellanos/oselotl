@@ -9,7 +9,7 @@ build_search_index = true
 
 # Minimal search settings
 [search]
-index_format = "elasticlunr"
+index_format = "elasticlunr_javascript"
 
 # Required markdown settings
 [markdown]
