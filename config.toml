@@ -1,4 +1,4 @@
-Copybase_url = "https://oselotl.com"
+base_url = "https://oselotl.com"
 title = "oselotl"
 theme = "DeepThought"
 compile_sass = true
