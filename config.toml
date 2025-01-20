@@ -1,19 +1,5 @@
-base_url = "https://oselotl.com"
+Copybase_url = "https://oselotl.com"
 title = "oselotl"
-description = "Welcome to my blog"
-theme = "duckquill"
-
-# Basic settings
+theme = "DeepThought"
 compile_sass = true
-build_search_index = true
-
-# Minimal search settings
-[search]
-index_format = "elasticlunr_javascript"
-
-# Required markdown settings
-[markdown]
-highlight_code = true
-
-[extra]
-author = "oselotl"
+generate_feed = true
