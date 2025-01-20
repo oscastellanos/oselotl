@@ -3,13 +3,28 @@ title = "oselotl"
 description = "Your site description"
 theme = "duckquill"
 
-# Required settings for duckquill
+# Required settings
 compile_sass = true
 build_search_index = true
 generate_feed = true
 
+# Search settings that were missing
+[search]
+index_format = "elasticlunr_javascript"
+include_content = true
+include_description = true
+
 [markdown]
 highlight_code = true
+highlight_theme = "dracula"
 
+# Theme settings
 [extra]
 author = "Your Name"
+favicon = "/icon.png"
+icon = "/icon.png"
+theme_color = "#ffffff"
+filter_nav = false
+
+# Date format
+default_language = "en"
