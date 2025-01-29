@@ -9,7 +9,7 @@ minify_html = true
 build_search_index = false
 author = "osvaldo castellanos"
 
-taxonomies = [{ name = "tags", feed = true }]
+taxonomies = [{ name = "tags", feed = false }]
 
 [markdown]
 highlight_code = true
@@ -58,7 +58,7 @@ show_copy_button = true
 
 [extra.nav]
 # Whether to show Atom/RSS feed button in the nav
-show_feed = true
+show_feed = false
 # Links used in the nav.
 # For local files use same link format as in Markdown,
 # i.e "@/blog/_index.md".
