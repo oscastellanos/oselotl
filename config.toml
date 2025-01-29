@@ -64,8 +64,8 @@ show_feed = true
 # i.e "@/blog/_index.md".
 # See https://www.getzola.org/documentation/content/linking/#internal-links
 links = [
+  { url = "@/_index.md", name = "Home"},
   { url = "@/blog/_index.md", name = "Blog"},
-  { url = "@/projects/_index.md", name = "Projects"},
 ]
 
 [extra.footer]

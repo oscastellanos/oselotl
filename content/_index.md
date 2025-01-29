@@ -1,12 +1,7 @@
 +++
-title = "Home"
-insert_anchor_links = "right"
+title = "home"
 +++
 
-{% crt() %}
-```
-\m/
-```
-{% end %}
+# Thanks for stopping by
 
-Been meaning to blog for a while. Finally getting around to setting this all up. 
+I'm os castellanos (oselotl) and this is my blog. 
