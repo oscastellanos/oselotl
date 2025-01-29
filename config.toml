@@ -8,8 +8,9 @@ compile_sass = true
 minify_html = true
 build_search_index = false
 author = "osvaldo castellanos"
+generate_feeds = true
 
-taxonomies = [{ name = "tags", feed = false }]
+taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
 highlight_code = true
@@ -58,7 +59,9 @@ show_copy_button = true
 
 [extra.nav]
 # Whether to show Atom/RSS feed button in the nav
-show_feed = false
+show_feed = true
+show_repo = true
+show_theme_switcher = true
 # Links used in the nav.
 # For local files use same link format as in Markdown,
 # i.e "@/blog/_index.md".
