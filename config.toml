@@ -23,8 +23,6 @@ highlight_themes_css = [
 smart_punctuation = true
 bottom_footnotes = true
 
-[search]
-index_format = "elasticlunr_json"
 
 
 [extra]
@@ -76,6 +74,9 @@ links = [
   { url = "@/_index.md", name = "Home"},
   { url = "@/blog/_index.md", name = "Blog"},
 ]
+
+[extra.search]
+index_format = "elasticlunr_json"
 
 [extra.footer]
 # Links used in the footer.
