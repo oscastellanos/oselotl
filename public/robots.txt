@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: https://oselot.com/sitemap.xml
+Sitemap: https://oselotl.com/sitemap.xml

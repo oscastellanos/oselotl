@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title>oselotl</title>
-    <link rel="self" type="application/atom+xml" href="https://oselot.com/atom.xml"/>
-    <link rel="alternate" type="text/html" href="https://oselot.com"/>
+    <link rel="self" type="application/atom+xml" href="https://oselotl.com/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://oselotl.com"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2025-01-28T00:00:00+00:00</updated>
-    <id>https://oselot.com/atom.xml</id>
+    <id>https://oselotl.com/atom.xml</id>
     <entry xml:lang="en">
         <title>hello</title>
         <published>2025-01-28T00:00:00+00:00</published>
@@ -17,10 +17,10 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://oselot.com/blog/first/"/>
-        <id>https://oselot.com/blog/first/</id>
+        <link rel="alternate" type="text/html" href="https://oselotl.com/blog/first/"/>
+        <id>https://oselotl.com/blog/first/</id>
         
-        <content type="html" xml:base="https://oselot.com/blog/first/">&lt;h1 id=&quot;hi&quot;&gt;hi&lt;&#x2F;h1&gt;
+        <content type="html" xml:base="https://oselotl.com/blog/first/">&lt;h1 id=&quot;hi&quot;&gt;hi&lt;&#x2F;h1&gt;
 &lt;p&gt;This is post number one. It’s helping me test out my GitHub Actions.&lt;&#x2F;p&gt;
 </content>
         
