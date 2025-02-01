@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>oselotl</title>
+      <link>https://oselotl.com</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://oselotl.com/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Tue, 28 Jan 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>hello</title>
+          <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+          <author>oselotl</author>
+          <link>https://oselotl.com/blog/first/</link>
+          <guid>https://oselotl.com/blog/first/</guid>
+          <description xml:base="https://oselotl.com/blog/first/">&lt;h1 id=&quot;hi&quot;&gt;hi&lt;&#x2F;h1&gt;
+&lt;p&gt;This is post number one. It’s helping me test out my GitHub Actions.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
