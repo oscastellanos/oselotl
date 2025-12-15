@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="logo">PORTFOLIO</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">Photography</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Photography</h1>
+            <p>Moments Captured in Time</p>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section class="photography-section">
+        <!-- Timeline Sidebar -->
+        <aside class="timeline-sidebar">
+            <div class="timeline">
+                <!-- 2024 -->
+                <div class="timeline-year">
+                    <div class="timeline-year-label">2024</div>
+                    <a class="timeline-album" data-album="japan-2024">
+                        Japan
+                        <span class="timeline-album-date">October</span>
+                    </a>
+                    <a class="timeline-album" data-album="radiohead-2024">
+                        Radiohead Live
+                        <span class="timeline-album-date">August</span>
+                    </a>
+                    <a class="timeline-album" data-album="summer-family-2024">
+                        Summer Memories
+                        <span class="timeline-album-date">July</span>
+                    </a>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <div class="timeline-year-label">2023</div>
+                    <a class="timeline-album" data-album="iceland-2023">
+                        Iceland
+                        <span class="timeline-album-date">September</span>
+                    </a>
+                    <a class="timeline-album" data-album="arcade-fire-2023">
+                        Arcade Fire
+                        <span class="timeline-album-date">June</span>
+                    </a>
+                    <a class="timeline-album" data-album="holidays-2023">
+                        Holiday Season
+                        <span class="timeline-album-date">December</span>
+                    </a>
+                </div>
+
+                <!-- 2022 -->
+                <div class="timeline-year">
+                    <div class="timeline-year-label">2022</div>
+                    <a class="timeline-album" data-album="portugal-2022">
+                        Portugal
+                        <span class="timeline-album-date">May</span>
+                    </a>
+                    <a class="timeline-album" data-album="bon-iver-2022">
+                        Bon Iver
+                        <span class="timeline-album-date">March</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main>
+            <!-- Album Grid View -->
+            <div class="albums-container" id="albums-grid">
+                <div class="albums-header">
+                    <h2>All Albums</h2>
+                    <p>A collection of moments from travels, concerts, and life</p>
+                </div>
+                <div class="albums-grid">
+                    <!-- Japan Trip -->
+                    <div class="album-card" data-album="japan-2024">
+                        <img src="images/japan/cover.jpg" alt="Japan">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Travel</span>
+                            <h3 class="album-card-title">Japan</h3>
+                            <span class="album-card-meta">October 2024 · 47 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Radiohead Concert -->
+                    <div class="album-card" data-album="radiohead-2024">
+                        <img src="images/concerts/radiohead/cover.jpg" alt="Radiohead Concert">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Concert</span>
+                            <h3 class="album-card-title">Radiohead Live</h3>
+                            <span class="album-card-meta">August 2024 · 32 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Summer Family -->
+                    <div class="album-card" data-album="summer-family-2024">
+                        <img src="images/family/summer-2024/cover.jpg" alt="Summer Memories">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Family</span>
+                            <h3 class="album-card-title">Summer Memories</h3>
+                            <span class="album-card-meta">July 2024 · 28 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Iceland -->
+                    <div class="album-card" data-album="iceland-2023">
+                        <img src="images/iceland/cover.jpg" alt="Iceland">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Travel</span>
+                            <h3 class="album-card-title">Iceland</h3>
+                            <span class="album-card-meta">September 2023 · 63 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Arcade Fire -->
+                    <div class="album-card" data-album="arcade-fire-2023">
+                        <img src="images/concerts/arcade-fire/cover.jpg" alt="Arcade Fire">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Concert</span>
+                            <h3 class="album-card-title">Arcade Fire</h3>
+                            <span class="album-card-meta">June 2023 · 24 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Holiday Season -->
+                    <div class="album-card" data-album="holidays-2023">
+                        <img src="images/family/holidays-2023/cover.jpg" alt="Holiday Season">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Family</span>
+                            <h3 class="album-card-title">Holiday Season</h3>
+                            <span class="album-card-meta">December 2023 · 41 photos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TRIP ALBUM TEMPLATE: Japan -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-japan-2024">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">Japan</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Travel</span>
+                        <span><strong>Date:</strong> October 12-26, 2024</span>
+                        <span><strong>Photos:</strong> 47</span>
+                        <span><strong>Locations:</strong> Tokyo, Kyoto, Osaka, Nara</span>
+                    </div>
+                    <p class="album-description">
+                        A two-week journey through Japan during autumn, capturing the vibrant colors of fall foliage, 
+                        ancient temples, bustling city streets, and the quiet moments in between. From the neon-lit 
+                        streets of Tokyo to the serene bamboo groves of Kyoto.
+                    </p>
+                </div>
+
+                <div class="trip-section">
+                    <h3 class="section-title">Journey Map</h3>
+                    <div class="map-container">
+                        <div id="trip-map"></div>
+                    </div>
+
+                    <h3 class="section-title">Trip Timeline</h3>
+                    <div class="trip-timeline">
+                        <div class="trip-day active" data-day="1">
+                            <span class="trip-day-label">Day 1-4</span>
+                            <div class="trip-day-date">Oct 12-15</div>
+                            <div class="trip-day-location">Tokyo</div>
+                        </div>
+                        <div class="trip-day" data-day="2">
+                            <span class="trip-day-label">Day 5-8</span>
+                            <div class="trip-day-date">Oct 16-19</div>
+                            <div class="trip-day-location">Kyoto</div>
+                        </div>
+                        <div class="trip-day" data-day="3">
+                            <span class="trip-day-label">Day 9-10</span>
+                            <div class="trip-day-date">Oct 20-21</div>
+                            <div class="trip-day-location">Nara</div>
+                        </div>
+                        <div class="trip-day" data-day="4">
+                            <span class="trip-day-label">Day 11-14</span>
+                            <div class="trip-day-date">Oct 22-26</div>
+                            <div class="trip-day-location">Osaka</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">Photos</h3>
+                    <div class="gallery-masonry">
+                        <!-- Add your photos here -->
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/japan/photo-01.jpg" alt="Fushimi Inari">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/japan/photo-02.jpg" alt="Tokyo Tower">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/japan/photo-03.jpg" alt="Bamboo Grove">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <!-- Add more photos as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- CONCERT ALBUM TEMPLATE: Radiohead -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-radiohead-2024">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">Radiohead Live</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Concert</span>
+                        <span><strong>Date:</strong> August 15, 2024</span>
+                        <span><strong>Photos:</strong> 32</span>
+                        <span><strong>Venue:</strong> Madison Square Garden</span>
+                    </div>
+                    <p class="album-description">
+                        An unforgettable night at Madison Square Garden. Radiohead delivered a career-spanning setlist 
+                        that moved from the electronic experimentation of Kid A to the guitar-driven anthems of The Bends. 
+                        The light show was mesmerizing, and the crowd energy was electric throughout.
+                    </p>
+                </div>
+
+                <div class="concert-section">
+                    <h3 class="section-title">Concert Details</h3>
+                    <div class="concert-info">
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Artist</div>
+                            <div class="concert-info-value">Radiohead</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Venue</div>
+                            <div class="concert-info-value">Madison Square Garden</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Date</div>
+                            <div class="concert-info-value">August 15, 2024</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Songs Played</div>
+                            <div class="concert-info-value">23 songs</div>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title">Favorite Songs Playlist</h3>
+                    <div class="spotify-embed">
+                        <!-- 
+                            HOW TO GET YOUR SPOTIFY EMBED:
+                            1. Open Spotify and go to your playlist
+                            2. Click the "..." menu > Share > Embed playlist
+                            3. Copy the embed code and replace the src URL below
+                        -->
+                        <iframe 
+                            style="border-radius:12px" 
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4g8Gs5nUhpp?utm_source=generator&theme=0" 
+                            width="100%" 
+                            height="352" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">Photos</h3>
+                    <div class="gallery-masonry">
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/radiohead/photo-01.jpg" alt="Stage">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/radiohead/photo-02.jpg" alt="Guitar">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/radiohead/photo-03.jpg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <!-- Add more photos as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- FAMILY ALBUM TEMPLATE: Summer Memories -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-summer-family-2024">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">Summer Memories</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Family</span>
+                        <span><strong>Date:</strong> July 2024</span>
+                        <span><strong>Photos:</strong> 28</span>
+                    </div>
+                    <p class="album-description">
+                        Lazy summer days at the lake house, backyard barbecues, and precious moments with the family. 
+                        This collection captures the warmth and joy of our annual summer gathering.
+                    </p>
+                </div>
+
+                <div class="family-section">
+                    <h3 class="section-title">Featured Moments</h3>
+                    <div class="family-featured">
+                        <div class="family-featured-main">
+                            <img src="images/family/summer-2024/featured.jpg" alt="Family Dinner">
+                        </div>
+                        <div class="family-featured-side">
+                            <div class="gallery-item" onclick="openLightbox(this)">
+                                <img src="images/family/summer-2024/photo-01.jpg" alt="Lake">
+                                <div class="gallery-item-overlay">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                                </div>
+                            </div>
+                            <div class="gallery-item" onclick="openLightbox(this)">
+                                <img src="images/family/summer-2024/photo-02.jpg" alt="Sunset">
+                                <div class="gallery-item-overlay">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">All Photos</h3>
+                    <div class="gallery-masonry">
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/family/summer-2024/photo-03.jpg" alt="Porch">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/family/summer-2024/photo-04.jpg" alt="Celebration">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <!-- Add more photos as needed -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" onclick="prevImage()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+        <button class="lightbox-nav lightbox-next" onclick="nextImage()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <footer>
+        <p>© 2024 Photography Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

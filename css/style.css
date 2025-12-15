@@ -1,0 +1,863 @@
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --text-muted: #666;
+    --accent: #d4a574;
+    --accent-dim: #8b6914;
+    --timeline-line: #2a2a2a;
+    --border: #252525;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    transition: background 0.3s ease;
+}
+
+.nav.scrolled {
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-primary);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(212, 165, 116, 0.02) 0%, transparent 40%);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* Main Layout */
+.photography-section {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Timeline Sidebar */
+.timeline-sidebar {
+    position: sticky;
+    top: 80px;
+    height: calc(100vh - 80px);
+    padding: 3rem 2rem;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+}
+
+.timeline-sidebar::-webkit-scrollbar {
+    width: 2px;
+}
+
+.timeline-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.timeline-sidebar::-webkit-scrollbar-thumb {
+    background: var(--timeline-line);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--timeline-line) 20%, var(--timeline-line) 80%, transparent);
+}
+
+.timeline-year {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-year-label {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    margin-left: -30px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-year-label::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent);
+}
+
+.timeline-album {
+    display: block;
+    padding: 0.5rem 0;
+    margin-left: -30px;
+    padding-left: 30px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.timeline-album::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--timeline-line);
+    transition: all 0.3s ease;
+}
+
+.timeline-album:hover,
+.timeline-album.active {
+    color: var(--text-primary);
+}
+
+.timeline-album:hover::before,
+.timeline-album.active::before {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-album-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 2px;
+}
+
+/* Album Grid */
+.albums-container {
+    padding: 3rem;
+}
+
+.albums-header {
+    margin-bottom: 3rem;
+}
+
+.albums-header h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.albums-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.album-card {
+    position: relative;
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.album-card:hover img {
+    transform: scale(1.05);
+}
+
+.album-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.album-card:hover .album-card-overlay {
+    opacity: 1;
+}
+
+.album-card-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.album-card-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+}
+
+.album-card-meta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* Album Detail View */
+.album-detail {
+    display: none;
+    padding: 3rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.album-detail.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.album-detail-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: var(--accent);
+}
+
+.album-detail-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.album-detail-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.album-detail-meta span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.album-detail-meta span strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.album-description {
+    max-width: 700px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Trip Album - Map Section */
+.trip-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.map-container {
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+#trip-map {
+    height: 100%;
+    width: 100%;
+}
+
+/* Trip Timeline */
+.trip-timeline {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.trip-timeline::-webkit-scrollbar {
+    height: 4px;
+}
+
+.trip-timeline::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 2px;
+}
+
+.trip-timeline::-webkit-scrollbar-thumb {
+    background: var(--accent-dim);
+    border-radius: 2px;
+}
+
+.trip-day {
+    flex-shrink: 0;
+    padding: 1rem 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.trip-day:hover,
+.trip-day.active {
+    background: var(--bg-tertiary);
+    border-color: var(--accent);
+}
+
+.trip-day-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.trip-day-date {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+}
+
+.trip-day-location {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* Concert Album - Spotify Section */
+.concert-section {
+    margin-bottom: 3rem;
+}
+
+.spotify-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.concert-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.concert-info-item {
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.concert-info-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.concert-info-value {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    margin-top: 3rem;
+}
+
+.gallery-masonry {
+    columns: 3;
+    column-gap: 1rem;
+}
+
+@media (max-width: 1200px) {
+    .gallery-masonry {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-masonry {
+        columns: 1;
+    }
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-overlay svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+/* Family Album Styles */
+.family-section {
+    margin-bottom: 3rem;
+}
+
+.family-featured {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.family-featured-main {
+    aspect-ratio: 16/10;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.family-featured-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.family-featured-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.family-featured-side .gallery-item {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.family-featured-side .gallery-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    border-color: var(--accent);
+    background: rgba(212, 165, 116, 0.1);
+}
+
+.lightbox-close svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-primary);
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    border-color: var(--accent);
+    background: rgba(212, 165, 116, 0.1);
+}
+
+.lightbox-nav svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-primary);
+}
+
+.lightbox-prev {
+    left: 2rem;
+}
+
+.lightbox-next {
+    right: 2rem;
+}
+
+/* Footer */
+footer {
+    padding: 4rem 3rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .photography-section {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-sidebar {
+        position: relative;
+        top: 0;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-year {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .timeline-year-label {
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0.5rem;
+    }
+
+    .timeline-year-label::before {
+        display: none;
+    }
+
+    .timeline-album {
+        margin-left: 0;
+        padding: 0.5rem 1rem;
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        border: 1px solid var(--border);
+    }
+
+    .timeline-album::before {
+        display: none;
+    }
+
+    .timeline-album-date {
+        display: none;
+    }
+
+    .nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .albums-container,
+    .album-detail {
+        padding: 2rem 1.5rem;
+    }
+
+    .family-featured {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Leaflet custom styles */
+.leaflet-container {
+    background: var(--bg-secondary);
+}
+
+.custom-marker {
+    background: var(--accent);
+    border: 3px solid var(--text-primary);
+    border-radius: 50%;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: -8px !important;
+    margin-top: -8px !important;
+}
+
+.leaflet-popup-content-wrapper {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 8px;
+}
+
+.leaflet-popup-tip {
+    background: var(--bg-secondary);
+}
+
+.leaflet-popup-content {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
