@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photography Portfolio</title>
+    <title>oselotl's photos</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,72 +19,80 @@
 <body>
     <!-- Navigation -->
     <nav class="nav">
-        <a href="#" class="logo">PORTFOLIO</a>
+        <a href="#" class="logo" onclick="showSection('home'); return false;">oselotl</a>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">Photography</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" onclick="showSection('home'); return false;">Home</a></li>
+            <li><a href="#" class="active" onclick="showSection('photography'); return false;">Photography</a></li>
+            <li><a href="#" onclick="showSection('about'); return false;">About</a></li>
+            <li><a href="#" onclick="showSection('contact'); return false;">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Photography</h1>
-            <p>Moments Captured in Time</p>
-        </div>
-    </section>
+    <!-- Home Section -->
+    <div id="home-section" class="page-section">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome</h1>
+                <p></p>
+                <button class="hero-button" onclick="showSection('photography')">View Photography</button>
+            </div>
+        </section>
+    </div>
 
     <!-- Photography Section -->
+    <div id="photography-section" class="page-section active">
     <section class="photography-section">
         <!-- Timeline Sidebar -->
         <aside class="timeline-sidebar">
             <div class="timeline">
-                <!-- 2024 -->
+                <!-- 2025 -->
                 <div class="timeline-year">
-                    <div class="timeline-year-label">2024</div>
-                    <a class="timeline-album" data-album="japan-2024">
-                        Japan
+                    <div class="timeline-year-label">2025</div>
+                    <a class="timeline-album" data-album="meltt-2025">
+                        Meltt Live
+                        <span class="timeline-album-date">November</span>
+                    </a>
+                    <a class="timeline-album" data-album="seattle-2025">
+                        Seattle
                         <span class="timeline-album-date">October</span>
                     </a>
-                    <a class="timeline-album" data-album="radiohead-2024">
-                        Radiohead Live
-                        <span class="timeline-album-date">August</span>
+                    <a class="timeline-album" data-album="acl-2025">
+                        ACL Festival
+                        <span class="timeline-album-date">October</span>
+                    </a>
+                    <a class="timeline-album" data-album="japan-2025">
+                        Japan
+                        <span class="timeline-album-date">July</span>
+                    </a>
+                    <!-- <a class="timeline-album" data-album="guadalajara-2025">
+                        Guadalajara
+                        <span class="timeline-album-date">March</span>
                     </a>
                     <a class="timeline-album" data-album="summer-family-2024">
                         Summer Memories
                         <span class="timeline-album-date">July</span>
+                    </a> -->
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-year">
+                    <div class="timeline-year-label">2024</div>
+                    <a class="timeline-album" data-album="europe-2024">
+                        Europe
+                        <span class="timeline-album-date">November</span>
+                    </a>
+                    <a class="timeline-album" data-album="cdmx-2024">
+                        Mexico City
+                        <span class="timeline-album-date">June</span>
                     </a>
                 </div>
 
                 <!-- 2023 -->
                 <div class="timeline-year">
                     <div class="timeline-year-label">2023</div>
-                    <a class="timeline-album" data-album="iceland-2023">
-                        Iceland
-                        <span class="timeline-album-date">September</span>
-                    </a>
-                    <a class="timeline-album" data-album="arcade-fire-2023">
-                        Arcade Fire
-                        <span class="timeline-album-date">June</span>
-                    </a>
-                    <a class="timeline-album" data-album="holidays-2023">
-                        Holiday Season
-                        <span class="timeline-album-date">December</span>
-                    </a>
-                </div>
-
-                <!-- 2022 -->
-                <div class="timeline-year">
-                    <div class="timeline-year-label">2022</div>
-                    <a class="timeline-album" data-album="portugal-2022">
-                        Portugal
-                        <span class="timeline-album-date">May</span>
-                    </a>
-                    <a class="timeline-album" data-album="bon-iver-2022">
-                        Bon Iver
-                        <span class="timeline-album-date">March</span>
+                    <a class="timeline-album" data-album="denver-2023">
+                        Denver
+                        <span class="timeline-album-date">August</span>
                     </a>
                 </div>
             </div>
@@ -99,178 +107,85 @@
                     <p>A collection of moments from travels, concerts, and life</p>
                 </div>
                 <div class="albums-grid">
+                    <!-- Meltt Concert -->
+                    <div class="album-card" data-album="meltt-2025">
+                        <img src="images/concerts/meltt/cover.jpg" alt="Meltt Concert">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Concert</span>
+                            <h3 class="album-card-title">Meltt Live</h3>
+                            <span class="album-card-meta">November 2025 · 4 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- Seattle -->
+                    <div class="album-card" data-album="seattle-2025">
+                        <img src="images/travel/seattle/cover.jpeg" alt="Seattle">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Travel</span>
+                            <h3 class="album-card-title">Seattle</h3>
+                            <span class="album-card-meta">October 2025 · 24 photos</span>
+                        </div>
+                    </div>
+
+                    <!-- ACL -->
+                    <div class="album-card" data-album="acl-2025">
+                        <img src="images/concerts/acl25/cover.jpeg" alt="ACL">
+                        <div class="album-card-overlay">
+                            <span class="album-card-type">Concert</span>
+                            <h3 class="album-card-title">ACL</h3>
+                            <span class="album-card-meta">October 2025 · 10 photos</span>
+                        </div>
+                    </div>
+
                     <!-- Japan Trip -->
-                    <div class="album-card" data-album="japan-2024">
-                        <img src="images/japan/cover.jpg" alt="Japan">
+                    <div class="album-card" data-album="japan-2025">
+                        <img src="images/travel/japan/tokyo/cover.jpeg" alt="Japan">
                         <div class="album-card-overlay">
                             <span class="album-card-type">Travel</span>
                             <h3 class="album-card-title">Japan</h3>
-                            <span class="album-card-meta">October 2024 · 47 photos</span>
+                            <span class="album-card-meta">June 2025 · 47 photos</span>
                         </div>
-                    </div>
-
-                    <!-- Radiohead Concert -->
-                    <div class="album-card" data-album="radiohead-2024">
-                        <img src="images/concerts/radiohead/cover.jpg" alt="Radiohead Concert">
-                        <div class="album-card-overlay">
-                            <span class="album-card-type">Concert</span>
-                            <h3 class="album-card-title">Radiohead Live</h3>
-                            <span class="album-card-meta">August 2024 · 32 photos</span>
-                        </div>
-                    </div>
+                    </div>                    
 
                     <!-- Summer Family -->
-                    <div class="album-card" data-album="summer-family-2024">
+                    <!-- <div class="album-card" data-album="summer-family-2024">
                         <img src="images/family/summer-2024/cover.jpg" alt="Summer Memories">
                         <div class="album-card-overlay">
                             <span class="album-card-type">Family</span>
                             <h3 class="album-card-title">Summer Memories</h3>
                             <span class="album-card-meta">July 2024 · 28 photos</span>
                         </div>
-                    </div>
-
-                    <!-- Iceland -->
-                    <div class="album-card" data-album="iceland-2023">
-                        <img src="images/iceland/cover.jpg" alt="Iceland">
-                        <div class="album-card-overlay">
-                            <span class="album-card-type">Travel</span>
-                            <h3 class="album-card-title">Iceland</h3>
-                            <span class="album-card-meta">September 2023 · 63 photos</span>
-                        </div>
-                    </div>
-
-                    <!-- Arcade Fire -->
-                    <div class="album-card" data-album="arcade-fire-2023">
-                        <img src="images/concerts/arcade-fire/cover.jpg" alt="Arcade Fire">
-                        <div class="album-card-overlay">
-                            <span class="album-card-type">Concert</span>
-                            <h3 class="album-card-title">Arcade Fire</h3>
-                            <span class="album-card-meta">June 2023 · 24 photos</span>
-                        </div>
-                    </div>
-
-                    <!-- Holiday Season -->
-                    <div class="album-card" data-album="holidays-2023">
-                        <img src="images/family/holidays-2023/cover.jpg" alt="Holiday Season">
-                        <div class="album-card-overlay">
-                            <span class="album-card-type">Family</span>
-                            <h3 class="album-card-title">Holiday Season</h3>
-                            <span class="album-card-meta">December 2023 · 41 photos</span>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <!-- ============================================== -->
-            <!-- TRIP ALBUM TEMPLATE: Japan -->
+            <!-- CONCERT ALBUM TEMPLATE: Meltt -->
             <!-- ============================================== -->
-            <div class="album-detail" id="album-japan-2024">
+            <div class="album-detail" id="album-meltt-2025">
                 <div class="album-detail-header">
                     <a class="back-button" onclick="showAlbumGrid()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
                         Back to Albums
                     </a>
-                    <h1 class="album-detail-title">Japan</h1>
-                    <div class="album-detail-meta">
-                        <span><strong>Type:</strong> Travel</span>
-                        <span><strong>Date:</strong> October 12-26, 2024</span>
-                        <span><strong>Photos:</strong> 47</span>
-                        <span><strong>Locations:</strong> Tokyo, Kyoto, Osaka, Nara</span>
-                    </div>
-                    <p class="album-description">
-                        A two-week journey through Japan during autumn, capturing the vibrant colors of fall foliage, 
-                        ancient temples, bustling city streets, and the quiet moments in between. From the neon-lit 
-                        streets of Tokyo to the serene bamboo groves of Kyoto.
-                    </p>
-                </div>
-
-                <div class="trip-section">
-                    <h3 class="section-title">Journey Map</h3>
-                    <div class="map-container">
-                        <div id="trip-map"></div>
-                    </div>
-
-                    <h3 class="section-title">Trip Timeline</h3>
-                    <div class="trip-timeline">
-                        <div class="trip-day active" data-day="1">
-                            <span class="trip-day-label">Day 1-4</span>
-                            <div class="trip-day-date">Oct 12-15</div>
-                            <div class="trip-day-location">Tokyo</div>
-                        </div>
-                        <div class="trip-day" data-day="2">
-                            <span class="trip-day-label">Day 5-8</span>
-                            <div class="trip-day-date">Oct 16-19</div>
-                            <div class="trip-day-location">Kyoto</div>
-                        </div>
-                        <div class="trip-day" data-day="3">
-                            <span class="trip-day-label">Day 9-10</span>
-                            <div class="trip-day-date">Oct 20-21</div>
-                            <div class="trip-day-location">Nara</div>
-                        </div>
-                        <div class="trip-day" data-day="4">
-                            <span class="trip-day-label">Day 11-14</span>
-                            <div class="trip-day-date">Oct 22-26</div>
-                            <div class="trip-day-location">Osaka</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-gallery">
-                    <h3 class="section-title">Photos</h3>
-                    <div class="gallery-masonry">
-                        <!-- Add your photos here -->
-                        <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/japan/photo-01.jpg" alt="Fushimi Inari">
-                            <div class="gallery-item-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/japan/photo-02.jpg" alt="Tokyo Tower">
-                            <div class="gallery-item-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/japan/photo-03.jpg" alt="Bamboo Grove">
-                            <div class="gallery-item-overlay">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
-                            </div>
-                        </div>
-                        <!-- Add more photos as needed -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- ============================================== -->
-            <!-- CONCERT ALBUM TEMPLATE: Radiohead -->
-            <!-- ============================================== -->
-            <div class="album-detail" id="album-radiohead-2024">
-                <div class="album-detail-header">
-                    <a class="back-button" onclick="showAlbumGrid()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
-                        Back to Albums
-                    </a>
-                    <h1 class="album-detail-title">Radiohead Live</h1>
+                    <h1 class="album-detail-title">Meltt Live</h1>
                     <div class="album-detail-meta">
                         <span><strong>Type:</strong> Concert</span>
-                        <span><strong>Date:</strong> August 15, 2024</span>
-                        <span><strong>Photos:</strong> 32</span>
-                        <span><strong>Venue:</strong> Madison Square Garden</span>
+                        <span><strong>Date:</strong> November 9, 2025</span>
+                        <span><strong>Photos:</strong> 4</span>
+                        <span><strong>Venue:</strong> The Ballroom @ Spiderhouse </span>
                     </div>
                     <p class="album-description">
-                        An unforgettable night at Madison Square Garden. Radiohead delivered a career-spanning setlist 
-                        that moved from the electronic experimentation of Kid A to the guitar-driven anthems of The Bends. 
-                        The light show was mesmerizing, and the crowd energy was electric throughout.
+                        Such a great time!
                     </p>
                 </div>
 
                 <div class="concert-section">
-                    <h3 class="section-title">Concert Details</h3>
+                    <!-- <h3 class="section-title">Concert Details</h3>
                     <div class="concert-info">
                         <div class="concert-info-item">
                             <div class="concert-info-label">Artist</div>
-                            <div class="concert-info-value">Radiohead</div>
+                            <div class="concert-info-value">Meltt</div>
                         </div>
                         <div class="concert-info-item">
                             <div class="concert-info-label">Venue</div>
@@ -284,51 +199,538 @@
                             <div class="concert-info-label">Songs Played</div>
                             <div class="concert-info-value">23 songs</div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <h3 class="section-title">Favorite Songs Playlist</h3>
-                    <div class="spotify-embed">
-                        <!-- 
-                            HOW TO GET YOUR SPOTIFY EMBED:
-                            1. Open Spotify and go to your playlist
-                            2. Click the "..." menu > Share > Embed playlist
-                            3. Copy the embed code and replace the src URL below
-                        -->
-                        <iframe 
-                            style="border-radius:12px" 
-                            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4g8Gs5nUhpp?utm_source=generator&theme=0" 
-                            width="100%" 
-                            height="352" 
-                            frameBorder="0" 
-                            allowfullscreen="" 
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                            loading="lazy">
-                        </iframe>
-                    </div>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3jDiRy4Lz2htlMlD3Cpb26?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="photo-gallery">
                     <h3 class="section-title">Photos</h3>
                     <div class="gallery-masonry">
                         <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/concerts/radiohead/photo-01.jpg" alt="Stage">
+                            <img src="images/concerts/meltt/cover.jpg" alt="Stage">
                             <div class="gallery-item-overlay">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
                             </div>
                         </div>
                         <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/concerts/radiohead/photo-02.jpg" alt="Guitar">
+                            <img src="images/concerts/meltt/photo-01.jpg" alt="Stage">
                             <div class="gallery-item-overlay">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
                             </div>
                         </div>
                         <div class="gallery-item" onclick="openLightbox(this)">
-                            <img src="images/concerts/radiohead/photo-03.jpg" alt="Lights">
+                            <img src="images/concerts/meltt/photo-02.jpg" alt="Guitar">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/meltt/photo-03.jpg" alt="Lights">
                             <div class="gallery-item-overlay">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
                             </div>
                         </div>
                         <!-- Add more photos as needed -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TRIP ALBUM TEMPLATE: Seattle -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-seattle-2025">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">Seattle</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Travel</span>
+                        <span><strong>Date:</strong> October 16-20, 2025</span>
+                        <span><strong>Photos:</strong> 24</span>
+                        <span><strong>Locations:</strong> Seattle</span>
+                    </div>
+                    <p class="album-description">
+                        A quick trip to Seattle to visit friends.
+                    </p>
+                </div>
+
+                <div class="trip-section">
+                    <h3 class="section-title">Journey Map</h3>
+                    <div class="map-container">
+                        <div id="seattle-map"></div>
+                    </div>
+
+                    <h3 class="section-title">Trip Timeline</h3>
+                    <div class="trip-timeline">
+                        <div class="trip-day active" data-day="1">
+                            <span class="trip-day-label">Day 1</span>
+                            <div class="trip-day-date">Oct 16</div>
+                            <div class="trip-day-location">Downtown Seattle</div>
+                        </div>
+                        <div class="trip-day" data-day="2">
+                            <span class="trip-day-label">Day 2</span>
+                            <div class="trip-day-date">Oct 17</div>
+                            <div class="trip-day-location">Rattlesnake Ledge Trail</div>
+                        </div>
+                        <div class="trip-day" data-day="4">
+                            <span class="trip-day-label">Day 4</span>
+                            <div class="trip-day-date">Oct 19</div>
+                            <div class="trip-day-location">Gas Works Park</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">Photos</h3>
+                    <div class="gallery-masonry" id="seattle-gallery">
+                        <!-- Day 1 Photos -->
+                         <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/space-needle.jpeg" alt="Space Needle iPhone">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-01.jpeg" alt="Space Needle">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-02.jpeg" alt="Space Needle B&W">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-03.jpeg" alt="Space Needle Distance">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-04.jpeg" alt="Diana Peace">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-05.jpeg" alt="The Eagle Has Landed">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-06.jpeg" alt="Berry Good">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-07.jpeg" alt="Kids Building">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/public-market.jpeg" alt="Public Market">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/hogwarts.jpeg" alt="Hogwarts">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <!-- Day 2 Photos -->
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/trail-01.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/trail-02.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/trail-03.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-08.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-09.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/seattle-10.jpeg" alt="Rattlesnake Ledge">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <!-- Day 3 Photos -->
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/cover.jpeg" alt="Seattle City Silhoutte">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/diana.jpeg" alt="Diana">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/gasworks.jpeg" alt="Gas Works Park">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/bicyclist.jpeg" alt="bicyclist">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/ducks.jpeg" alt="Ducks">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/double-rainbow.jpeg" alt="Double Rainbow">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/seattle/gasworks-pub.jpeg" alt="Gas Works Park">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- CONCERT ALBUM TEMPLATE: ACL 25 -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-acl-2025">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">ACL 25</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Concert</span>
+                        <span><strong>Date:</strong> November 9, 2025</span>
+                        <span><strong>Photos:</strong> 10</span>
+                        <span><strong>Venue:</strong> Zilker Park </span>
+                    </div>
+                    <p class="album-description">
+                        Finally got a chance to see some long time favorites: Empire of the Sun, The Strokes, The Killers. 
+                        <br>
+                        Also got a chance to check out more recent faves like Japenese Breakfast and Wet Leg.
+                        <br>
+                        <br>
+                        These were all taken on the iPhone 15 Pro Max since I wasn't allowed to take any cameras to the event.
+                    </p>
+                </div>
+
+                <div class="concert-section">
+                    <!-- <h3 class="section-title">Concert Details</h3>
+                    <div class="concert-info">
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Artist</div>
+                            <div class="concert-info-value">Meltt</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Venue</div>
+                            <div class="concert-info-value">Madison Square Garden</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Date</div>
+                            <div class="concert-info-value">August 15, 2024</div>
+                        </div>
+                        <div class="concert-info-item">
+                            <div class="concert-info-label">Songs Played</div>
+                            <div class="concert-info-value">23 songs</div>
+                        </div>
+                    </div> -->
+
+                    <h3 class="section-title">Favorite Songs Playlist</h3>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4YDaGhi92OtDBSNZuOjd2F?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">Photos</h3>
+                    <div class="gallery-masonry">
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/cover.jpeg" alt="Stage">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/jbreakie-01.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/empire-01.jpeg" alt="Stage">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/empire-02.jpeg" alt="Guitar">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/strokes-01.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/strokes-02.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/tpain-01.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/tpain-02.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/wetleg-01.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openLightbox(this)">
+                            <img src="images/concerts/acl25/wetleg-02.jpeg" alt="Lights">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- TRIP ALBUM TEMPLATE: Japan -->
+            <!-- ============================================== -->
+            <div class="album-detail" id="album-japan-2025">
+                <div class="album-detail-header">
+                    <a class="back-button" onclick="showAlbumGrid()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back to Albums
+                    </a>
+                    <h1 class="album-detail-title">Japan</h1>
+                    <div class="album-detail-meta">
+                        <span><strong>Type:</strong> Travel</span>
+                        <span><strong>Date:</strong> June 27 - July 13, 2025</span>
+                        <span><strong>Photos:</strong> 47</span>
+                        <span><strong>Locations:</strong> Tokyo, Kyoto, Osaka, Nagoya</span>
+                    </div>
+                    <p class="album-description">
+                        A two-week journey through Japan during the summer. 
+                    </p>
+                </div>
+
+                <div class="trip-section">
+                    <h3 class="section-title">Journey Map</h3>
+                    <div class="map-container">
+                        <div id="trip-map"></div>
+                    </div>
+
+                    <h3 class="section-title">Trip Timeline</h3>
+                    <div class="trip-timeline">
+                        <div class="trip-day active" data-day="1">
+                            <span class="trip-day-label">Day 1-4</span>
+                            <div class="trip-day-date">Jun 27 - Jul 1</div>
+                            <div class="trip-day-location">Tokyo</div>
+                        </div>
+                        <div class="trip-day" data-day="2">
+                            <span class="trip-day-label">Day 4-5</span>
+                            <div class="trip-day-date">Jul 1-2</div>
+                            <div class="trip-day-location">Nagoya</div>
+                        </div>
+                        <div class="trip-day" data-day="3">
+                            <span class="trip-day-label">Day 5-8</span>
+                            <div class="trip-day-date">Jul 2-5</div>
+                            <div class="trip-day-location">Kyoto</div>
+                        </div>
+                        <div class="trip-day" data-day="4">
+                            <span class="trip-day-label">Day 8-12</span>
+                            <div class="trip-day-date">Jul 5-9</div>
+                            <div class="trip-day-location">Osaka</div>
+                        </div>
+                        <div class="trip-day" data-day="4">
+                            <span class="trip-day-label">Day 12-15</span>
+                            <div class="trip-day-date">Jul 9-12</div>
+                            <div class="trip-day-location">Tokyo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-gallery">
+                    <h3 class="section-title">Photos</h3>
+                    <div class="gallery-masonry" id="japan-gallery">
+                        <!-- Day 1: Tokyo (Jun 27 - Jul 1) -->
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Tokyo/tokyo-01.jpeg" alt="Tokyo">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Tokyo/tokyo-02.jpeg" alt="Tokyo">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="1" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Tokyo/tokyo-04.jpeg" alt="Tokyo">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- Day 2: Nagoya (Jul 1-2) - Add your Nagoya photos here -->
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Nagoya/nagoya-02.jpeg" alt="Nagoya">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Nagoya/nagoya-03.jpeg" alt="Nagoya">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="2" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Nagoya/nagoya-05.jpeg" alt="Nagoya">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- Day 3: Kyoto (Jul 2-5) - Add your Kyoto photos here -->
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-01.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-02.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-03.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-04.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-05.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-06.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-07.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-08.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-09.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-day="3" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Kyoto/kyoto-10.jpeg" alt="Kyoto">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+
+                        <!-- Day 4: Osaka (Jul 5-9) - Add your Osaka photos here -->
+                        <!-- Example:
+                        <div class="gallery-item" data-day="4" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Osaka/osaka-01.jpeg" alt="Osaka">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        -->
+
+                        <!-- Day 5: Tokyo (Jul 9-12) - Add your second Tokyo trip photos here -->
+                        <!-- Example:
+                        <div class="gallery-item" data-day="5" onclick="openLightbox(this)">
+                            <img src="images/travel/japan/Tokyo/tokyo-return-01.jpeg" alt="Tokyo">
+                            <div class="gallery-item-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+                            </div>
+                        </div>
+                        -->
                     </div>
                 </div>
             </div>
@@ -398,6 +800,139 @@
             </div>
         </main>
     </section>
+    </div>
+
+    <!-- About Section -->
+    <div id="about-section" class="page-section">
+        <section class="about-content">
+            <div class="about-container">
+                <div class="about-header">
+                    <h1>About Me</h1>
+                    <div class="about-divider"></div>
+                </div>
+
+                <div class="about-body">
+                    <div class="about-text">
+                        <p class="about-intro">
+                            Hi, I'm <strong>oselotl</strong> – a photographer passionate about capturing moments that tell a story.
+                        </p>
+
+                        <p>
+                            My photography journey began with a simple fascination: how a single frame can freeze time
+                            and evoke emotions that words often cannot. Whether I'm exploring new cities, attending
+                            concerts, or spending time with family, I always have my camera ready to capture the beauty
+                            in everyday moments.
+                        </p>
+
+                        <p>
+                            I specialize in travel, concert, and lifestyle photography. Each photo in my portfolio
+                            represents a memory, a feeling, or a story worth sharing. From the neon-lit streets of Tokyo
+                            to intimate concert venues, I aim to capture the essence of each moment authentically.
+                        </p>
+
+                        <div class="about-specialties">
+                            <h3>What I Shoot</h3>
+                            <ul>
+                                <li><strong>Travel Photography</strong> – Documenting adventures across the globe</li>
+                                <li><strong>Concert Photography</strong> – Capturing the energy of live music</li>
+                                <li><strong>Lifestyle & Family</strong> – Preserving precious everyday moments</li>
+                            </ul>
+                        </div>
+
+                        <div class="about-equipment">
+                            <h3>Gear</h3>
+                            <p>
+                                I shoot primarily with a Sony mirrorless camera system, which allows me to stay
+                                lightweight while traveling without compromising on image quality. My workflow
+                                emphasizes natural light and authentic moments over heavy editing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-image">
+                        <div class="about-image-placeholder">
+                            <!-- Replace this with your actual photo -->
+                            <img src="images/about-photo.jpg" alt="oselotl" onerror="this.style.display='none'">
+                        </div>
+                        <p class="about-image-caption">Somewhere on the journey...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact-section" class="page-section">
+        <section class="contact-content">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h1>Get In Touch</h1>
+                    <div class="contact-divider"></div>
+                    <p class="contact-subtitle">
+                        Interested in collaborating or want to inquire about prints?
+                        I'd love to hear from you.
+                    </p>
+                </div>
+
+                <div class="contact-body">
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+
+                        <div class="form-success" id="form-success">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you soon.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <h3>Email</h3>
+                            <a href="mailto:hello@oselotl.com">hello@oselotl.com</a>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h3>Social</h3>
+                            <div class="social-links">
+                                <a href="https://instagram.com/oselotl" target="_blank" rel="noopener">Instagram</a>
+                                <a href="https://twitter.com/oselotl" target="_blank" rel="noopener">Twitter</a>
+                                <a href="https://flickr.com/oselotl" target="_blank" rel="noopener">Flickr</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <h3>Availability</h3>
+                            <p>Currently available for select projects and commissions. Response time is typically within 48 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
@@ -414,7 +949,7 @@
     </div>
 
     <footer>
-        <p>© 2024 Photography Portfolio. All rights reserved.</p>
+        <p>© 2026 oselotl. All rights reserved.</p>
     </footer>
 
     <!-- Leaflet JS for maps -->
