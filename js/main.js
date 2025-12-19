@@ -282,30 +282,39 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
     if (e.target.id === 'lightbox') closeLightbox();
 });
 
-// Contact Form Handling
+// Contact Form Handling with Formspree
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
+        const formData = new FormData(contactForm);
 
-        console.log('Form submitted:', formData);
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'flex';
+            if (response.ok) {
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'flex';
 
-        setTimeout(() => {
-            contactForm.reset();
-            contactForm.style.display = 'block';
-            formSuccess.style.display = 'none';
-        }, 5000);
+                setTimeout(() => {
+                    contactForm.reset();
+                    contactForm.style.display = 'block';
+                    formSuccess.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Oops! There was a problem submitting your form. Please try again.');
+            }
+        } catch (error) {
+            alert('Oops! There was a problem submitting your form. Please try again.');
+        }
     });
 }
